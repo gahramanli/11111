@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+
+export const App=()=> {
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log("button submitted");
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form onSubmit={handleSubmit}>
+      <label>To Do</label>
+      <input placeholder='create to do text' />
+      <input type="submit" value="Add"/>
+      </form>
     </div>
   );
 }
